@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 
 def MyFavouriteBook(request):
-    return HttpResponse("Моя любимая книга - Богатый папа, бедный папа.")
+    return HttpResponse("Моя любимая книга - Samurai  без меча .")
 
 
 def AboutMySelf(request):
@@ -13,4 +13,4 @@ def AboutMySelf(request):
 
 
 def MyHobby(request):
-    return HttpResponse("Мое хобби - программирование и изучение новых технологий.")
+    return HttpResponse("Мое хобби - АвтоСпорт.")
