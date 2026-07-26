@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Book
+from . import models
 
-# Register your models here.
+# 2-Домашка.-----------------------------------------------
+admin.site.register(models.Book)
