@@ -1,0 +1,13 @@
+<h1>Продукты категории  - {{caty}}</h1>
+
+{% for i in prod %}
+
+<p>Название продукта - {{ i.name }}</p>
+
+<p>Цена - {{ i.price }}</p>
+
+<p>Категория - {{ i.category_product.name }}</p>
+
+<hr>
+
+{% endfor %}
