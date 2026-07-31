@@ -2,6 +2,10 @@
 
 {% for i in caty %}
 
-<p>{{ i.name }}</p>
+<a href="{% url 'category_products' i.id %}">
+    {{ i.name }}
+</a>
+
+<br>
 
 {% endfor %}
