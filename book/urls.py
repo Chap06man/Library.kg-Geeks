@@ -8,4 +8,5 @@ urlpatterns = [
     path("hobby/", MyHobby),
     path('book_list/', views.book_list_view),
     path('book_list/<int:id>/', views.book_detail_view),
+    path('book_list/', views.book_list_view, name='book_list'),
 ]
