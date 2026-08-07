@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книги от Сардара </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-header {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #111827;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #2563eb;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-ghost {
+            color: #4b5563;
+            background: transparent;
+        }
+
+        .btn-ghost:hover {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Логотип -->
+            <a href="#" class="logo-area">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SardarBook</span>
+            </a>
+
+            <!-- Навигация -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#" class="nav-link active">Главная</a></li>
+                    <li><a href="#" class="nav-link">Услуги</a></li>
+                    <li><a href="#" class="nav-link">О нас</a></li>
+                    <li><a href="#" class="nav-link">Блог</a></li>
+                    <li><a href="#" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Действия / Кнопки -->
+            <div class="header-actions">
+                <a href="#" class="btn btn-ghost">Войти</a>
+                <a href="#" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>

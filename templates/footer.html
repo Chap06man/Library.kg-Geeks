@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-footer {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #111827;
+            color: #9ca3af;
+            padding-top: 60px;
+            padding-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .footer-brand .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .brand-description {
+            max-width: 320px;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .footer-column-title {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .copyright {
+            color: #6b7280;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #1f2937;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-brand {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .footer-brand {
+                grid-column: span 1;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <!-- О компании -->
+                <div class="footer-brand">
+                    <a href="#" class="logo-area">
+                        <div class="logo-icon">S</div>
+                        <span class="logo-text">BrandName</span>
+                    </a>
+                    <p class="brand-description">
+                        Современные решения для вашего бизнеса. Мы помогаем компаниям расти и развиваться в цифровой среде.
+                    </p>
+                </div>
+
+                <!-- Навигация 1 -->
+                <div>
+                    <h4 class="footer-column-title">Продукт</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Возможности</a></li>
+                        <li><a href="#" class="footer-link">Тарифы</a></li>
+                        <li><a href="#" class="footer-link">Интеграции</a></li>
+                        <li><a href="#" class="footer-link">Обновления</a></li>
+                    </ul>
+                </div>
+
+                <!-- Навигация 2 -->
+                <div>
+                    <h4 class="footer-column-title">Компания</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">О нас</a></li>
+                        <li><a href="#" class="footer-link">Карьера</a></li>
+                        <li><a href="#" class="footer-link">Новости</a></li>
+                        <li><a href="#" class="footer-link">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Навигация 3 -->
+                <div>
+                    <h4 class="footer-column-title">Ресурсы</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Документация</a></li>
+                        <li><a href="#" class="footer-link">Блог</a></li>
+                        <li><a href="#" class="footer-link">Поддержка</a></li>
+                        <li><a href="#" class="footer-link">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Нижняя панель -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 BrandName. Все права защищены.
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Telegram">TG</a>
+                    <a href="#" class="social-icon" aria-label="VK">VK</a>
+                    <a href="#" class="social-icon" aria-label="GitHub">GH</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

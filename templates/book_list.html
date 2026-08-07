@@ -1,15 +1,162 @@
-<h1>Блог о книгах</h1>
+{% include 'header.html' %}
 
-{% for i in book_list %}
-<hr><hr>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f9fafb;
+        color: #1f2937;
+        margin: 0;
+        padding: 0;
+    }
 
-<h2>Название книги - {{ i.title }}</h2>
-<img src="{{ i.image.url }}" alt="" width="300" height="250">
-<p>Дата - {{ i.publication_date }}</p>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
 
-<a href="/book_list/{{ i.id }}/">Подробнее</a>
-<br>
-<a href="/basket/create/{{ i.id }}/">Добавить в корзину</a>
+    .page-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 32px;
+        color: #111827;
+    }
 
-<hr><hr>
-{% endfor %}
+    .book-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .book-card {
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .book-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-image-wrapper {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        background-color: #f3f4f6;
+    }
+
+    .book-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .book-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+        color: #111827;
+    }
+
+    .book-date {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin: 0 0 16px 0;
+    }
+
+    .book-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    .btn-detail, .btn-cart {
+        display: block;
+        text-align: center;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-detail {
+        background-color: #f3f4f6;
+        color: #374151;
+    }
+
+    .btn-detail:hover {
+        background-color: #e5e7eb;
+    }
+
+    .btn-cart {
+        background-color: #2563eb;
+        color: #ffffff;
+    }
+
+    .btn-cart:hover {
+        background-color: #1d4ed8;
+    }
+</style>
+
+<center>
+<form action="/search/" method="GET">
+    <input type="search" name="s" placeholder=" Укажите название книгу">
+    <button type="submit">Поиск</button>
+</form>
+</center>
+
+<main class="container">
+    <h1 class="page-title">Книги Сардара</h1>
+
+    <div class="book-grid">
+        {% for i in book_list %}
+        <article class="book-card">
+            <div class="book-content">
+                <div class="book-image-wrapper">
+                    <img class="book-image" src="{{ i.image.url }}" alt="{{ i.title }}">
+                </div>
+                <h2 class="book-title">{{ i.title }}</h2>
+                <p class="book-date">Дата публикации: {{ i.publication_date }}</p>
+            </div>
+
+            <div class="book-actions">
+                <a href="/book_list/{{ i.id }}/" class="btn-detail">Подробнее</a>
+                <a href="/basket/create/{{ i.id }}/" class="btn-cart">Добавить в корзину</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</main>
+
+<div class="pagination">
+        <span class="step-links">
+            {% if book_list.has_previous %}
+                <a href="?page=1">&laquo; Первая</a>
+                <a href="?page={{ book_list.previous_page_number }}">Предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ book_list.number }} из {{ book_list.paginator.num_pages }}.
+            </span>
+
+            {% if book_list.has_next %}
+                <a href="?page={{ book_list.next_page_number }}">Следующая</a>
+                <a href="?page={{ book_list.paginator.num_pages }}">Последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+{% include 'footer.html' %}
