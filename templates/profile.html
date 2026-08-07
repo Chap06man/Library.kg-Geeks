@@ -1,0 +1,23 @@
+<h1>Личный кабинет</h1>
+
+<h2>Привет, {{ user.username }}!</h2>
+
+<img src="{{ user.photo.url }}" alt="Фото пользователя" width="200" height="200">
+
+<hr>
+
+<p><strong>Имя:</strong> {{ user.first_name }}</p>
+<p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Телефон:</strong> {{ user.phone_number }}</p>
+<p><strong>Дата рождения:</strong> {{ user.day_birth }}</p>
+<p><strong>Местоположение:</strong> {{ user.location }}</p>
+<p><strong>Пол:</strong> {{ user.gender }}</p>
+<p><strong>Город:</strong> {{ user.city }}</p>
+<p><strong>Профессия:</strong> {{ user.prof }}</p>
+<p><strong>Хобби:</strong> {{ user.hobby }}</p>
+
+<form action="/logout/" method="POST">
+    {% csrf_token %}
+    <button type="submit">Выйти из личного кабинета</button>
+</form>

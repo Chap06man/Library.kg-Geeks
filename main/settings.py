@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RECAPTCHA_PUBLIC_KEY = "6LdCznktAAAAAO2cfaqaNime-xlvl2slkTZzniMJ"
+RECAPTCHA_PRIVATE_KEY = "6LdCznktAAAAAOtRzDLrhgRHebcjYl0nheE8SmJa"
 
 # Application definition
 
@@ -42,6 +44,8 @@ INSTALLED_APPS = [
     'myShop',
     'horse_tour',
     'basket_book',
+    'user',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
